@@ -111,7 +111,8 @@ public class PlayerController : MonoBehaviour
     }
     private void GatherInput()
     {
-        moveInput = _moveAction.ReadValue<Vector2>();
+        Vector2 rawInput = _moveAction.ReadValue<Vector2>();
+        moveInput = rawInput.sqrMagnitude > 1f ? rawInput.normalized : rawInput;
     }
     private void Movement()
     {
@@ -122,12 +123,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleJump()
     {
-        if(_jumpAction.WasPressedThisFrame())
+        if(_jumpAction.WasPressedThisFrame() && CheckGrounded())
         {
-            if(CheckGrounded())
-            {
-                OnJump?.Invoke();
-            }
+            OnJump?.Invoke();
         }
     }
     
