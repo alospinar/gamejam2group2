@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject jailScreen;
     public GameObject hospitalScreen;
     public GameObject pauseScreen;
-    public Button playButton;
+    public GameObject settingsScreen;
+    public GameObject creditsScreen;
     public bool isGameActive;
     public Image barraAnsiedad;
     public Image barraMalViaje;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateBarra();
-        if (policeColision || barraCurrentData == 0)
+        if (policeColision || barraCurrentData == 0) 
         {
             GameOver();
         }
@@ -72,4 +73,29 @@ public class GameManager : MonoBehaviour
     public void RestartGame () {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void SettingScreen ()
+    {
+        titleScreen.SetActive(false);
+        settingsScreen.SetActive(true);
+    }
+
+    public void ReturnFromSettings()
+    {
+        settingsScreen.SetActive(false);
+        titleScreen.SetActive(true);
+    }
+
+    public void CreditsScreen ()
+    {
+        titleScreen.SetActive(false);
+        creditsScreen.SetActive(true);
+    }
+
+    public void ReturnFromCredits ()
+    {
+        titleScreen.SetActive(true);
+        creditsScreen.SetActive(false);
+    }
+   
 }
