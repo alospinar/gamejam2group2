@@ -1536,7 +1536,7 @@ TilemapRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.50171363, y: 0.5136088, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -8727,7 +8727,7 @@ Tilemap:
   - first: {x: -13, y: 30, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 4
+      m_TileIndex: 15
       m_TileSpriteIndex: 15
       m_TileMatrixIndex: 4
       m_TileColorIndex: 0
@@ -9053,7 +9053,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741826
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -9110,14 +9110,14 @@ Tilemap:
   - m_RefCount: 129
     m_Data: {fileID: 621495331, guid: f110d8e6e367169489a5283ae623dab2, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 0
+  - m_RefCount: 47
     m_Data:
-      e00: 0
+      e00: 1
       e01: 0
       e02: 0
       e03: -1.0573889e-37
       e10: 0
-      e11: 0
+      e11: 1
       e12: 0
       e13: 1.68e-43
       e20: 0
@@ -9149,15 +9149,15 @@ Tilemap:
   - m_RefCount: 4
     m_Data:
       e00: -1
-      e01: -0.00000008742278
-      e02: -0
+      e01: 0
+      e02: 0
       e03: 0
-      e10: 0.00000008742278
-      e11: -1
+      e10: 0
+      e11: 1
       e12: 0
       e13: 0
       e20: 0
-      e21: -0
+      e21: 0
       e22: 1
       e23: 0
       e30: 0
@@ -9166,15 +9166,15 @@ Tilemap:
       e33: 1
   - m_RefCount: 4
     m_Data:
-      e00: 0.000000059604645
-      e01: 0.99999994
+      e00: 0
+      e01: -1
       e02: 0
       e03: 0
-      e10: -0.99999994
-      e11: 0.000000059604645
-      e12: -0
+      e10: 1
+      e11: 0
+      e12: 0
       e13: 0
-      e20: -0
+      e20: 0
       e21: 0
       e22: 1
       e23: 0
@@ -9202,12 +9202,12 @@ Tilemap:
       e33: 1
   - m_RefCount: 521
     m_Data:
-      e00: 1
+      e00: -1
       e01: 0
       e02: 0
       e03: 0
       e10: 0
-      e11: 1
+      e11: -1
       e12: 0
       e13: 0
       e20: 0
