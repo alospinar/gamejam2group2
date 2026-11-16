@@ -1,27 +1,79 @@
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.Audio;
+using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
-public class VolumeController : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    public Slider backgroundVolumeSlider;
+
+    //UI:
+    public AudioMixer mainMixer;
+    public Slider bgmSlider;
+    public Slider sfxSlider;
+
+    //Sountrack:
+
+    public AudioSource menuMusic;
+    public AudioSource soberMusic;
+    public AudioSource trippedMusic;
+
+    //Verificar si trippedMusic ha empezado antes.
+    public bool hasTrippedMusicStarted = false;
+
+    private GameManager gameManager;
 
     void Start()
     {
-        // 1. Cargamos el volumen guardado (por defecto será 1.0, que es el 100%)
-        float backgroundVolume = PlayerPrefs.GetFloat("VolumenMaster", 1f);
-        
-        // 2. Ajustamos el Slider y el audio maestro a ese valor inicial
-        backgroundVolumeSlider.value = backgroundVolume;
-        AudioListener.volume = backgroundVolume;
-
-        // 3. Conectamos el Slider mediante código para evitar errores en el Inspector
-        backgroundVolumeSlider.onValueChanged.AddListener(UpdateVolume);
+        InicializeVolume();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Esta función se activa automáticamente cada vez que el usuario arrastra el Handle
-    public void UpdateVolume(float value)
+    private void InicializeVolume() 
     {
-        AudioListener.volume = value; // El volumen va de 0.0 (silencio) a 1.0 (máximo)
-        PlayerPrefs.SetFloat("VolumenMaster", value); // Guarda la preferencia para el siguiente nivel
+        float savedBGM = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float savedSFX = PlayerPrefs.GetFloat("SFXVolume", 1f);
+
+        bgmSlider.value = savedBGM;
+        sfxSlider.value = savedSFX;
+
+        bgmSlider.onValueChanged.AddListener(SetBGMVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
+
+    public void SetBGMVolume(float value)
+    {
+        mainMixer.SetFloat("BGMVolume", Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat("BGMVolume", value);
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        mainMixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", value);
+    }
+
+    public void PlaySoberMusic()
+    {
+        menuMusic.Stop();
+        soberMusic.Play();
+    }
+
+    public void SwitchToTrippedWorld()
+    {
+        soberMusic.mute = true;
+        if (!hasTrippedMusicStarted)
+        {
+            trippedMusic.Play();
+            hasTrippedMusicStarted = true;
+        }
+        trippedMusic.mute = false;
+    }
+
+    public void SwitchToSoberWorld()
+    {
+        trippedMusic.mute = true;
+        soberMusic.mute = false;
+    }
+    
 }
