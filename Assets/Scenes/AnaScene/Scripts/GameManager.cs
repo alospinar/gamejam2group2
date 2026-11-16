@@ -14,12 +14,14 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject settingsScreen;
     public GameObject creditsScreen;
+    public SoundManager soundManager;
     public bool isGameActive;
     public Image barraAnsiedad;
     public Image barraMalViaje;
     public float barraCurrentData;
     public float barraTotalData;
     public bool policeColision;
+    public bool isTripped;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +30,8 @@ public class GameManager : MonoBehaviour
         barraCurrentData = 3;
         barraTotalData = 3;
         policeColision = false;
-    }
+        isTripped = false;
+}
 
     // Update is called once per frame
     void Update()
@@ -38,13 +41,31 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        SwitchWorld();
+
     }
 
     public void StartGame () 
     { 
         isGameActive = true;
         titleScreen.SetActive(false);
-        HUDScreen.SetActive(true);
+        HUDScreen.SetActive(true);  
+        soundManager.PlaySoberMusic();
+    }
+
+    public void SwitchWorld()
+    {
+
+        if (isTripped)
+        {
+            soundManager.SwitchToTrippedWorld();
+        }
+        else
+        {
+            soundManager.SwitchToSoberWorld();
+        }
+
     }
 
     void GameOver()
