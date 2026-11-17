@@ -190,7 +190,7 @@ MonoBehaviour:
   colliderInRealWorld: 1
   colliderInFantasyWorld: 0
   realBodyType: 0
-  fantasyBodyType: 2
+  fantasyBodyType: 1
 --- !u!114 &8024869625287488376
 MonoBehaviour:
   m_ObjectHideFlags: 0
