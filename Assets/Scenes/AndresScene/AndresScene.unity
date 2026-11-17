@@ -1136,7 +1136,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.54, y: 8.412, z: -10}
+  m_LocalPosition: {x: 2.8974447, y: -0.8454, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10609,6 +10609,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c7463bcaa60024a8cf8c568c82c37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  initialAnxiety: 1
+  initialMushrooms: 0
+  requiredTickets: 3
+  anxietyGameOverScene: Derrota 1
+  policeGameOverScene: Derrota 2
+  firstLevelScene: Level 1
+  secondLevelScene: Level 2
+  thirdLevelScene: Level 3
+  victoryScene: Victoria
 --- !u!1 &1387751942
 GameObject:
   m_ObjectHideFlags: 0
@@ -10936,7 +10945,7 @@ Transform:
   m_GameObject: {fileID: 1468594630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.54, y: 8.412, z: -10}
+  m_LocalPosition: {x: -1.2200003, y: -2.638, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11713,7 +11722,6 @@ MonoBehaviour:
   playerWorldObject: {fileID: 0}
   realWorldTilemap: {fileID: 1992931571}
   fantasyWorldTilemap: {fileID: 687145952}
-  mushroomCharges: 0
 --- !u!4 &1936891091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7457595900031613197, guid: 3a881fe12a3323d4eaf8e0eb37cc012b, type: 3}
@@ -18382,11 +18390,11 @@ PrefabInstance:
       objectReference: {fileID: 423311911}
     - target: {fileID: 6470765934350739669, guid: 8e275ef849b382843abc96adff44eff0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.62
+      value: -8.14
       objectReference: {fileID: 0}
     - target: {fileID: 6470765934350739669, guid: 8e275ef849b382843abc96adff44eff0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.16
+      value: -3.89
       objectReference: {fileID: 0}
     - target: {fileID: 6470765934350739669, guid: 8e275ef849b382843abc96adff44eff0, type: 3}
       propertyPath: m_LocalPosition.z

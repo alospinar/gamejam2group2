@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class MushroomPickup : MonoBehaviour
 {
-    [SerializeField] private WorldManager worldManager;
     [SerializeField] private int chargesToRestore = 1;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -10,16 +9,16 @@ public class MushroomPickup : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        if (worldManager == null)
+        if (LevelManager.Instance == null)
         {
-            Debug.LogError("MushroomPickup requires a WorldManager reference.", this);
+            Debug.LogError("MushroomPickup requires a LevelManager in the scene.", this);
             return;
         }
 
         if (SoundManager.Instance != null)
             SoundManager.Instance.PlayMushroomPickup();
 
-        worldManager.RestoreMushroomCharges(chargesToRestore);
+        LevelManager.Instance.AddMushroom(chargesToRestore);
         Destroy(gameObject);
     }
 }
