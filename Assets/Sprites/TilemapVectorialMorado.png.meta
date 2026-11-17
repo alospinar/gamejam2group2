@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9c3e620552f7d2d4fb46afc3cb226bcc
+guid: 8a8d21aebd6b8574594faffb5f213059
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7240239031234988373
-    second: TilemapVectorial_0
+      213: 6551627116597369310
+    second: TilemapVectorialMorado_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 210
+  spritePixelsToUnits: 199
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,33 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,639 +113,661 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilemapVectorial_0
+      name: TilemapVectorialMorado_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 2571
-        width: 420
-        height: 420
-      alignment: 9
-      pivot: {x: 0.49914318, y: 0.49333438}
+        x: 50
+        y: 1317
+        width: 211
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5590ea9d90f7a7460800000000000000
-      internalID: 7240239031234988373
+      spriteID: ed95a99862e0cea50800000000000000
+      internalID: 6551627116597369310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_1
+      name: TilemapVectorialMorado_1
       rect:
         serializedVersion: 2
-        x: 576
-        y: 2571
-        width: 420
-        height: 420
+        x: 299
+        y: 1317
+        width: 211
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42eb64c1ad404134aaed8654c1ec794f
-      internalID: -1355394704
+      spriteID: 62188cd2c5c99e54c90d71d79b3f3766
+      internalID: 925080615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_2
+      name: TilemapVectorialMorado_2
       rect:
         serializedVersion: 2
-        x: 1079
-        y: 2571
-        width: 420
-        height: 420
+        x: 552
+        y: 1316
+        width: 210
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 489ef0e3f0c696447b77e80bd9991ce9
-      internalID: -1799139019
+      spriteID: d9f56c0ffb6fc104ea8630ab68e25cb4
+      internalID: -1380882010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_3
+      name: TilemapVectorialMorado_3
       rect:
         serializedVersion: 2
-        x: 1574
-        y: 2571
-        width: 420
-        height: 420
+        x: 803
+        y: 1316
+        width: 211
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0adf2a92a073e6b428a67a14207c9dd8
-      internalID: 999390754
+      spriteID: 31b9fda3616eb5443a210de35951330f
+      internalID: -344300317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_4
+      name: TilemapVectorialMorado_4
       rect:
         serializedVersion: 2
-        x: 2071
-        y: 2571
-        width: 420
-        height: 420
+        x: 1054
+        y: 1317
+        width: 211
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4adf2f841aed95499058af5b4357869
-      internalID: -227629748
+      spriteID: 0ce2b737c6f645a47aff401de1953edd
+      internalID: 2082395073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_5
+      name: TilemapVectorialMorado_5
       rect:
         serializedVersion: 2
-        x: 2071
-        y: 2065
-        width: 420
-        height: 420
+        x: 50
+        y: 1065
+        width: 211
+        height: 209
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50db6d6ae0a25a24da83161c4abe041d
-      internalID: -1109809294
+      spriteID: 04c3ce8a373ee7c4da03861e7f8060fd
+      internalID: -1935919227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_6
+      name: TilemapVectorialMorado_6
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 2065
-        width: 420
-        height: 420
+        x: 299
+        y: 1064
+        width: 211
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baf178aef684dc244b5a99094e7bc7e1
-      internalID: 1268654976
+      spriteID: 3a5b6fca1279e7f48967609cf21d094b
+      internalID: 637477521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_7
+      name: TilemapVectorialMorado_7
       rect:
         serializedVersion: 2
-        x: 1068
-        y: 2065
-        width: 420
-        height: 420
+        x: 552
+        y: 1065
+        width: 210
+        height: 209
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eebd634da39264d40a1de760db7e49a5
-      internalID: -1489834415
+      spriteID: c44b56fed3d167d4583530c3eae5e06d
+      internalID: -376580378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_8
+      name: TilemapVectorialMorado_8
       rect:
         serializedVersion: 2
-        x: 568
-        y: 2065
-        width: 420
-        height: 420
+        x: 802
+        y: 1065
+        width: 211
+        height: 209
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c04863575edb924bacd70786fa095fb
-      internalID: -658985493
+      spriteID: a01140bc904487842910c5f1032e59c6
+      internalID: 1559072969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_9
+      name: TilemapVectorialMorado_9
       rect:
         serializedVersion: 2
-        x: 67
-        y: 2065
-        width: 420
-        height: 420
+        x: 1054
+        y: 1065
+        width: 211
+        height: 209
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2100b1f4e240e1e48b9a6d5cd00eb6e4
-      internalID: -1415641903
+      spriteID: d521d37c1b002584b80b411699057da5
+      internalID: 1350036766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_10
+      name: TilemapVectorialMorado_10
       rect:
         serializedVersion: 2
-        x: 73
-        y: 1556
-        width: 420
-        height: 420
+        x: 49
+        y: 814
+        width: 212
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38efe1785f2c3584cbd9250b456f4184
-      internalID: 1631410506
+      spriteID: 01e378bd096a7b843a69ef4c90c32df5
+      internalID: -989317874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_11
+      name: TilemapVectorialMorado_11
       rect:
         serializedVersion: 2
-        x: 575
-        y: 1556
-        width: 420
-        height: 420
+        x: 302
+        y: 815
+        width: 211
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39ad00d60f8f5954e89421af1c15a0da
-      internalID: 601678864
+      spriteID: 50fe40c7330e83b47a03918bb76433a4
+      internalID: -526048526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_12
+      name: TilemapVectorialMorado_12
       rect:
         serializedVersion: 2
-        x: 1082
-        y: 1556
-        width: 420
-        height: 420
+        x: 552
+        y: 814
+        width: 210
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3dbf7b1691d5574e978ea9e6ca5cd05
-      internalID: 1089435913
+      spriteID: 373c4c24397bed24a821ea7841e76df1
+      internalID: 132386930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_13
+      name: TilemapVectorialMorado_13
       rect:
         serializedVersion: 2
-        x: 1567
-        y: 1556
-        width: 420
-        height: 420
+        x: 803
+        y: 814
+        width: 211
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ccf0604057e47c4fa302ce601eeef9b
-      internalID: 841556835
+      spriteID: 6cb610f6dfe581c4c994e84d393ae951
+      internalID: -1985167652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_14
+      name: TilemapVectorialMorado_14
       rect:
         serializedVersion: 2
-        x: 2068
-        y: 1556
-        width: 420
-        height: 420
+        x: 1053
+        y: 814
+        width: 211
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5ae26d8c5676344db07900ae13a972a
-      internalID: 1099142284
+      spriteID: fd399c99de6d7274186ceb7920f53edd
+      internalID: -709847559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_15
+      name: TilemapVectorialMorado_15
       rect:
         serializedVersion: 2
-        x: 1079
-        y: 1067
-        width: 420
-        height: 420
+        x: 49
+        y: 562
+        width: 212
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 082ea46760bc6b745bd65a2c0ca57a32
-      internalID: 1679462271
+      spriteID: a7439e2b3f758e74d9fc9d91dd1bc21b
+      internalID: -1457553075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_16
+      name: TilemapVectorialMorado_16
       rect:
         serializedVersion: 2
-        x: 1567
-        y: 1067
-        width: 420
-        height: 420
+        x: 302
+        y: 564
+        width: 210
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d56618fe767163448df4ac45a8a9aff
-      internalID: 24814850
+      spriteID: 9f1f52a2a8262ad419fca314ac17e1b7
+      internalID: -622222464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_17
+      name: TilemapVectorialMorado_17
       rect:
         serializedVersion: 2
-        x: 572
-        y: 1056
-        width: 429
-        height: 435
+        x: 551
+        y: 562
+        width: 211
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7163745db05f1184a88b7f1253e88409
-      internalID: -1329334889
+      spriteID: a77e31d105a4951448ed7d1acbf68595
+      internalID: 1803606490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_18
+      name: TilemapVectorialMorado_18
       rect:
         serializedVersion: 2
-        x: 69
-        y: 1062
-        width: 420
-        height: 431
+        x: 802
+        y: 562
+        width: 211
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 3}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff46cb4cfec081e4bb1e618cbffa9d95
-      internalID: -1968057328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilemapVectorial_19
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 569
-        width: 420
-        height: 420
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 451f6e436cd51c844b108012021436ec
-      internalID: 835281014
+      spriteID: 5f83e8f36cd8b2544b307cb2e1e1814e
+      internalID: 919297389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_20
+      name: TilemapVectorialMorado_19
       rect:
         serializedVersion: 2
-        x: 572
-        y: 569
-        width: 420
-        height: 420
+        x: 1053
+        y: 562
+        width: 211
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa7594858d9b8f941b40fdc669237029
-      internalID: -1238751648
+      spriteID: d4133988e716b094da44fcd841de66c2
+      internalID: -1993747366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_21
+      name: TilemapVectorialMorado_20
       rect:
         serializedVersion: 2
-        x: 1078
-        y: 569
-        width: 420
-        height: 420
+        x: 49
+        y: 301
+        width: 212
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05fc00bfaddb3314c90f218b52bf5051
-      internalID: 793158755
+      spriteID: d0f78af4dae7b294eab35e68830126f7
+      internalID: 1607989866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_22
+      name: TilemapVectorialMorado_21
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 569
-        width: 420
-        height: 420
+        x: 302
+        y: 303
+        width: 212
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10e41171184a7354888426de8bf413cf
-      internalID: -5151812
+      spriteID: e10221c45cd9c8a45ba40269d02accda
+      internalID: 2119328039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_23
+      name: TilemapVectorialMorado_22
       rect:
         serializedVersion: 2
-        x: 2068
-        y: 569
-        width: 420
-        height: 420
+        x: 552
+        y: 301
+        width: 210
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a2f6943d27d17943aa002e5f24fe18c
-      internalID: -1560457939
+      spriteID: dd0a1cfdaeaa7534da3ef1a3d84c06eb
+      internalID: 1000566751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_24
+      name: TilemapVectorialMorado_23
       rect:
         serializedVersion: 2
-        x: 70
-        y: 70
-        width: 420
-        height: 420
+        x: 802
+        y: 301
+        width: 211
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2ee4ed703ad02742a8f106fc6562e14
-      internalID: -738524304
+      spriteID: 652beba767080dd45bce21bda1f20530
+      internalID: -20381437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_25
+      name: TilemapVectorialMorado_24
       rect:
         serializedVersion: 2
-        x: 576
-        y: 70
-        width: 420
-        height: 420
+        x: 1053
+        y: 301
+        width: 212
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac64b4db89832de4a8f4a6bfb47c3a0a
-      internalID: -1730336013
+      spriteID: 0ef9ff76e291f054dafc69a87893d724
+      internalID: -423014248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_26
+      name: TilemapVectorialMorado_25
       rect:
         serializedVersion: 2
-        x: 1070
-        y: 70
-        width: 420
-        height: 420
+        x: 50
+        y: 41
+        width: 211
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79277d6255532224ca72f0949d1463a7
-      internalID: 1532691867
+      spriteID: c53712a26075e3545b5fbf79b680cd70
+      internalID: 1868218304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_27
+      name: TilemapVectorialMorado_26
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 70
-        width: 420
-        height: 420
+        x: 302
+        y: 43
+        width: 211
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b8787d76cf2e1849861a4230fb8d387
-      internalID: 1095209230
+      spriteID: 45bae4b56d3777b40bed725535370d9e
+      internalID: -34390207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapVectorial_28
+      name: TilemapVectorialMorado_27
       rect:
         serializedVersion: 2
-        x: 2071
-        y: 70
-        width: 420
-        height: 420
+        x: 551
+        y: 42
+        width: 211
+        height: 210
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3434982beaf0e7f4ebd04a5ddce2ff0c
-      internalID: -691486654
+      spriteID: 16d7e519a0a38324399d129302aedea8
+      internalID: 20625704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilemapVectorialMorado_28
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 41
+        width: 211
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90f3dc35c2340f40ac29d7c3ba5e177
+      internalID: -450667889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilemapVectorialMorado_29
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 42
+        width: 212
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e12436b7d73d5c44a2222f67e8119ce
+      internalID: 1223624810
       vertices: []
       indices: 
       edges: []
@@ -780,7 +776,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f5d4fe31c8c60924099e72739928e031
+    spriteID: 0f795082633810e4ba6429f24c024368
     internalID: 0
     vertices: []
     indices: 
@@ -788,37 +784,40 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      TilemapVectorial_0: 7240239031234988373
-      TilemapVectorial_1: -1355394704
-      TilemapVectorial_10: 1631410506
-      TilemapVectorial_11: 601678864
-      TilemapVectorial_12: 1089435913
-      TilemapVectorial_13: 841556835
-      TilemapVectorial_14: 1099142284
-      TilemapVectorial_15: 1679462271
-      TilemapVectorial_16: 24814850
-      TilemapVectorial_17: -1329334889
-      TilemapVectorial_18: -1968057328
-      TilemapVectorial_19: 835281014
-      TilemapVectorial_2: -1799139019
-      TilemapVectorial_20: -1238751648
-      TilemapVectorial_21: 793158755
-      TilemapVectorial_22: -5151812
-      TilemapVectorial_23: -1560457939
-      TilemapVectorial_24: -738524304
-      TilemapVectorial_25: -1730336013
-      TilemapVectorial_26: 1532691867
-      TilemapVectorial_27: 1095209230
-      TilemapVectorial_28: -691486654
-      TilemapVectorial_3: 999390754
-      TilemapVectorial_4: -227629748
-      TilemapVectorial_5: -1109809294
-      TilemapVectorial_6: 1268654976
-      TilemapVectorial_7: -1489834415
-      TilemapVectorial_8: -658985493
-      TilemapVectorial_9: -1415641903
+      TilemapVectorialMorado_0: 6551627116597369310
+      TilemapVectorialMorado_1: 925080615
+      TilemapVectorialMorado_10: -989317874
+      TilemapVectorialMorado_11: -526048526
+      TilemapVectorialMorado_12: 132386930
+      TilemapVectorialMorado_13: -1985167652
+      TilemapVectorialMorado_14: -709847559
+      TilemapVectorialMorado_15: -1457553075
+      TilemapVectorialMorado_16: -622222464
+      TilemapVectorialMorado_17: 1803606490
+      TilemapVectorialMorado_18: 919297389
+      TilemapVectorialMorado_19: -1993747366
+      TilemapVectorialMorado_2: -1380882010
+      TilemapVectorialMorado_20: 1607989866
+      TilemapVectorialMorado_21: 2119328039
+      TilemapVectorialMorado_22: 1000566751
+      TilemapVectorialMorado_23: -20381437
+      TilemapVectorialMorado_24: -423014248
+      TilemapVectorialMorado_25: 1868218304
+      TilemapVectorialMorado_26: -34390207
+      TilemapVectorialMorado_27: 20625704
+      TilemapVectorialMorado_28: -450667889
+      TilemapVectorialMorado_29: 1223624810
+      TilemapVectorialMorado_3: -344300317
+      TilemapVectorialMorado_4: 2082395073
+      TilemapVectorialMorado_5: -1935919227
+      TilemapVectorialMorado_6: 637477521
+      TilemapVectorialMorado_7: -376580378
+      TilemapVectorialMorado_8: 1559072969
+      TilemapVectorialMorado_9: 1350036766
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
