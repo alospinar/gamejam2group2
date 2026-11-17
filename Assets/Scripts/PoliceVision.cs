@@ -31,12 +31,29 @@ public class PoliceVision : MonoBehaviour
 
     private void Update()
     {
+        DetectPlayersInRange();
+
         if (directionChangeInterval <= 0f || Time.time < nextDirectionChangeTime)
             return;
 
         currentDirection *= -1;
         nextDirectionChangeTime = Time.time + directionChangeInterval;
         ApplyVisualDirection();
+    }
+
+    private void DetectPlayersInRange()
+    {
+        if (Time.time < nextDetectionTime ||
+            LevelManager.Instance == null ||
+            LevelManager.Instance.CurrentState != GameState.Playing)
+            return;
+
+        Collider2D[] playersInRange = Physics2D.OverlapCircleAll(
+            transform.position,
+            viewDistance);
+
+        foreach (Collider2D player in playersInRange)
+            TryDetect(player);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -52,7 +69,8 @@ public class PoliceVision : MonoBehaviour
     private void TryDetect(Collider2D other)
     {
         if (Time.time < nextDetectionTime ||
-            !IsInLayerMask(other.gameObject.layer, playerLayer) ||
+            (!IsInLayerMask(other.gameObject.layer, playerLayer) &&
+             !other.CompareTag("Player")) ||
             LevelManager.Instance == null ||
             LevelManager.Instance.CurrentState != GameState.Playing)
             return;
@@ -64,19 +82,9 @@ public class PoliceVision : MonoBehaviour
         if (distanceToPlayer > viewDistance || distanceToPlayer <= Mathf.Epsilon)
             return;
 
-        Vector2 normalizedDirection = directionToPlayer / distanceToPlayer;
         Vector2 viewDirection = Vector2.right * currentDirection;
-        float angle = Vector2.Angle(viewDirection, normalizedDirection);
+        float angle = Vector2.Angle(viewDirection, directionToPlayer / distanceToPlayer);
         if (angle > viewAngle * 0.5f)
-            return;
-
-        RaycastHit2D obstacleHit = Physics2D.Raycast(
-            transform.position,
-            normalizedDirection,
-            distanceToPlayer,
-            obstacleLayer);
-
-        if (obstacleHit.collider != null)
             return;
 
         LevelManager.Instance.TriggerGameOver(GameOverReason.PoliceDetected);
@@ -100,6 +108,6 @@ public class PoliceVision : MonoBehaviour
         Gizmos.color = Color.yellow;
         Vector3 origin = transform.position;
         Vector3 forward = Vector3.right * (startingDirection < 0 ? -1f : 1f);
-        Gizmos.DrawLine(origin, origin + forward * viewDistance);
+        Gizmos.DrawWireSphere(transform.position, viewDistance);
     }
 }

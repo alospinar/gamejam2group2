@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9042717652453311048}
-  - component: {fileID: 2030653066311227408}
+  - component: {fileID: 1664306080913462901}
   m_Layer: 0
   m_Name: Vidrios Flores
   m_TagString: Untagged
@@ -226,7 +226,7 @@ Transform:
   - {fileID: 1089036584311359731}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &2030653066311227408
+--- !u!210 &1664306080913462901
 SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
