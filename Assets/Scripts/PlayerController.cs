@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _extraGravity = 20f;
     [SerializeField] private float _gravityDelay = 0.2f;
     [SerializeField] CapsuleCollider2D _myFeetCollider;
+    [SerializeField] private Animator _animator;
 
     public Vector2 moveInput;
     public float _timeInAir;
@@ -29,6 +30,9 @@ public class PlayerController : MonoBehaviour
         if(Instance == null ) {Instance =this;}
 
         _rigidBody = GetComponent<Rigidbody2D>();
+        if (_animator == null)
+            _animator = GetComponentInChildren<Animator>();
+
         _rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         _playerInputActions = new InputSystem_Actions();
         _moveAction = _playerInputActions.Player.Move;
@@ -62,16 +66,19 @@ public class PlayerController : MonoBehaviour
 
     private void ClimbLadder()
     {
-        if(!_myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        bool isTouchingClimbing = _myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"));
+        if(!isTouchingClimbing)
         {
             _rigidBody.gravityScale = _gravityScaleAtStart;
+            if (_animator != null)
+                _animator.SetBool("Isclimbing", false);
             return;
         }
         _rigidBody.gravityScale = 0f;
         Vector2 climbVelocity = new Vector2(_rigidBody.linearVelocity.x,moveInput.y*climbSpeed);
         _rigidBody.linearVelocity = climbVelocity;
-        bool hasVerticalSpeed = Mathf.Abs(_rigidBody.linearVelocity.y)> Mathf.Epsilon;
-        //myAnimator.SetBool("isClimbing",hasVerticalSpeed);
+        if (_animator != null)
+            _animator.SetBool("Isclimbing", true);
     }
 
     void FixedUpdate()
@@ -118,6 +125,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 playerVelocity = new Vector2(moveInput.x*moveSpeed,_rigidBody.linearVelocity.y);
         _rigidBody.linearVelocity = playerVelocity;
+        if (_animator != null)
+            _animator.SetBool("Isrunning", Mathf.Abs(moveInput.x) > Mathf.Epsilon);
         FlipSprite();
     }
 
@@ -125,6 +134,9 @@ public class PlayerController : MonoBehaviour
     {
         if(_jumpAction.WasPressedThisFrame() && CheckGrounded())
         {
+            if (_animator != null)
+                _animator.SetTrigger("Jump");
+
             OnJump?.Invoke();
         }
     }

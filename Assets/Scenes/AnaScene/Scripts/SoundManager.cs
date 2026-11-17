@@ -21,6 +21,21 @@ public class SoundManager : MonoBehaviour
     //Verificar si trippedMusic ha empezado antes.
     public bool hasTrippedMusicStarted = false;
 
+    //SFX
+    public AudioSource agarrarTicket;
+    public AudioSource arrastrarSilla;
+    public AudioSource interaccion1;
+    public AudioSource interaccion2;
+    public AudioSource interaccion3;
+    public AudioSource interaccion4;
+    public AudioSource portal; // cuando cambie del mundo sobrio al viajado
+    public AudioSource pasos; //debe acelerarse para que quede con el player
+    public AudioSource saltoCorto; // salto por defecto
+    public AudioSource saltoLargo; // salto con hongo
+    public AudioSource susto; // cuando se topa con la sombra del policia o la sombra de la lámpara
+    public AudioSource tragar; // cuando consume el hongo verde. 
+
+
     private GameManager gameManager;
 
     void Start()
