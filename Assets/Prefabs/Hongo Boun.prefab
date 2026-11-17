@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1025231829845750984}
   - component: {fileID: 730225290730689696}
   - component: {fileID: 2896867619660045178}
+  - component: {fileID: 4023456850766588579}
   m_Layer: 6
   m_Name: Hongo Boun
   m_TagString: Untagged
@@ -166,3 +167,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4023456850766588579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854680974726505481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f59b82ffdaa74891d52f1dfe66ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldObject
+  spriteRenderer: {fileID: 1025231829845750984}
+  objectCollider: {fileID: 730225290730689696}
+  _rigidbody2D: {fileID: 0}
+  realSprite: {fileID: 0}
+  fantasySprite: {fileID: 21300000, guid: 6ddfda813c079524090156f5cbb39c89, type: 3}
+  realScale: {x: 1, y: 1, z: 1}
+  fantasyScale: {x: 1, y: 1, z: 1}
+  colliderInRealWorld: 0
+  colliderInFantasyWorld: 1
+  realBodyType: 2
+  fantasyBodyType: 2
