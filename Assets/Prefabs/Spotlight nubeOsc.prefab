@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8035694964755187574}
-  - component: {fileID: 7049405173412673899}
+  - component: {fileID: 3834819251696539539}
   m_Layer: 10
   m_Name: Visuals
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5527710933343864457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7049405173412673899
+--- !u!212 &3834819251696539539
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -103,7 +103,8 @@ GameObject:
   - component: {fileID: 7216438131652556501}
   - component: {fileID: 7677955271938532661}
   - component: {fileID: 1931444151348284309}
-  - component: {fileID: 4478172216602440754}
+  - component: {fileID: 5797302312110837753}
+  - component: {fileID: 7667204577338365217}
   m_Layer: 10
   m_Name: Spotlight nubeOsc
   m_TagString: Untagged
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7f59b82ffdaa74891d52f1dfe66ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldObject
-  spriteRenderer: {fileID: 4478172216602440754}
+  spriteRenderer: {fileID: 0}
   objectCollider: {fileID: 7216438131652556501}
   _rigidbody2D: {fileID: 0}
   realSprite: {fileID: 21300000, guid: baad059832a7e254b9e6677e2a465615, type: 3}
@@ -209,7 +210,30 @@ MonoBehaviour:
   colliderInFantasyWorld: 1
   realBodyType: 2
   fantasyBodyType: 2
---- !u!212 &4478172216602440754
+--- !u!114 &5797302312110837753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217958799420597274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f59b82ffdaa74891d52f1dfe66ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldObject
+  spriteRenderer: {fileID: 7667204577338365217}
+  objectCollider: {fileID: 7216438131652556501}
+  _rigidbody2D: {fileID: 0}
+  realSprite: {fileID: 21300000, guid: baad059832a7e254b9e6677e2a465615, type: 3}
+  fantasySprite: {fileID: 21300000, guid: 50a704c83c8325f409f8d28762312c4b, type: 3}
+  realScale: {x: 3.190169, y: 3.190169, z: 0}
+  fantasyScale: {x: 3.190169, y: 3.5, z: 1}
+  colliderInRealWorld: 0
+  colliderInFantasyWorld: 1
+  realBodyType: 2
+  fantasyBodyType: 2
+--- !u!212 &7667204577338365217
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
