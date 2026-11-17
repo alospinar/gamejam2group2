@@ -24,7 +24,7 @@ public class WorldManager : MonoBehaviour
     [SerializeField] private Tilemap fantasyWorldTilemap;
 
     [Header("Mushroom Charges")]
-    [SerializeField] private int mushroomCharges = 3;
+    [SerializeField] private int mushroomCharges = 0;
 
     private WorldType currentWorld = WorldType.Real;
 
@@ -58,13 +58,20 @@ public class WorldManager : MonoBehaviour
 
     private void OnSwitchWorld(InputAction.CallbackContext context)
     {
-        if (mushroomCharges <= 0)
+        bool enteringFantasyWorld = currentWorld == WorldType.Real;
+        if (enteringFantasyWorld && mushroomCharges <= 0)
             return;
 
-        mushroomCharges--;
+        if (enteringFantasyWorld)
+            mushroomCharges--;
+
         currentWorld = currentWorld == WorldType.Real
             ? WorldType.Fantasy
             : WorldType.Real;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayPortal();
+
         UpdateWorld();
     }
 
@@ -86,6 +93,14 @@ public class WorldManager : MonoBehaviour
 
         SetTilemapActive(realWorldTilemap, !isFantasyWorld);
         SetTilemapActive(fantasyWorldTilemap, isFantasyWorld);
+
+        if (SoundManager.Instance != null)
+        {
+            if (isFantasyWorld)
+                SoundManager.Instance.SwitchToTrippedWorld();
+            else
+                SoundManager.Instance.SwitchToSoberWorld();
+        }
 
         Debug.Log($"World: {currentWorld}. Mushroom charges: {mushroomCharges}");
     }

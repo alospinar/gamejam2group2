@@ -6,6 +6,9 @@ public class TickectPickup : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlayTicketPickup();
+
             Destroy(gameObject);
         }
     }
