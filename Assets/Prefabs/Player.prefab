@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1514119599
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1088683268896198077, guid: ebdf894bee51dfe4082e3492ce61b165, type: 3}
@@ -157,7 +157,7 @@ SortingGroup:
   m_GameObject: {fileID: 1196461226308463964}
   m_Enabled: 1
   m_SortingLayerID: 1514119599
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 4
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 2496715593891728233}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
