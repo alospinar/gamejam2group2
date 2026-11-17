@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3987071160838333211}
   - component: {fileID: 8527510545949047219}
   - component: {fileID: 4437352064822524259}
-  m_Layer: 6
+  - component: {fileID: 133725875173700014}
+  m_Layer: 9
   m_Name: armario Nube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.1, y: -0.88, z: 0}
-  m_LocalScale: {x: 1.2102063, y: 1.42, z: 1.2102063}
+  m_LocalScale: {x: 1.8413289, y: 2.1605299, z: 1.8413289}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,8 +84,8 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2014659211, guid: b62935352fa197b489c36fcf90096967, type: 3}
-  m_Color: {r: 0.3962264, g: 0.37730256, b: 0.34950158, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c1f109e8b71f5340ae7a1162e1c3431, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,15 +155,38 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.023553848, y: -0.099096775}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
+    oldSize: {x: 1.685, y: 2.32}
     newSize: {x: 3, y: 3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 1.5573897, y: 2.1372733}
   m_EdgeRadius: 0
+--- !u!114 &133725875173700014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269686402831704193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7f59b82ffdaa74891d52f1dfe66ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldObject
+  spriteRenderer: {fileID: 3987071160838333211}
+  objectCollider: {fileID: 4437352064822524259}
+  _rigidbody2D: {fileID: 0}
+  realSprite: {fileID: 21300000, guid: 6c1f109e8b71f5340ae7a1162e1c3431, type: 3}
+  fantasySprite: {fileID: 21300000, guid: 77292e217df9e834e9d3070c12244f96, type: 3}
+  realScale: {x: 1.841329, y: 2.16053, z: 1.841329}
+  fantasyScale: {x: 1, y: 1, z: 1}
+  colliderInRealWorld: 1
+  colliderInFantasyWorld: 0
+  realBodyType: 2
+  fantasyBodyType: 2
