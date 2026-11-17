@@ -6,6 +6,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance { get; private set; }
 
     //UI:
     public AudioMixer mainMixer;
@@ -38,10 +39,26 @@ public class SoundManager : MonoBehaviour
 
     private GameManager gameManager;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            StopAllMusic();
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     void Start()
     {
         InicializeVolume();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GameObject gameManagerObject = GameObject.Find("GameManager");
+        if (gameManagerObject != null)
+            gameManager = gameManagerObject.GetComponent<GameManager>();
     }
 
     private void InicializeVolume() 
@@ -49,11 +66,17 @@ public class SoundManager : MonoBehaviour
         float savedBGM = PlayerPrefs.GetFloat("BGMVolume", 1f);
         float savedSFX = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-        bgmSlider.value = savedBGM;
-        sfxSlider.value = savedSFX;
+        if (bgmSlider != null)
+        {
+            bgmSlider.value = savedBGM;
+            bgmSlider.onValueChanged.AddListener(SetBGMVolume);
+        }
 
-        bgmSlider.onValueChanged.AddListener(SetBGMVolume);
-        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+        if (sfxSlider != null)
+        {
+            sfxSlider.value = savedSFX;
+            sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+        }
     }
 
     public void SetBGMVolume(float value)
@@ -70,25 +93,93 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoberMusic()
     {
-        menuMusic.Stop();
-        soberMusic.Play();
+        PlayOnlyMusic(soberMusic);
     }
 
     public void SwitchToTrippedWorld()
     {
-        soberMusic.mute = true;
-        if (!hasTrippedMusicStarted)
-        {
-            trippedMusic.Play();
+        PlayOnlyMusic(trippedMusic);
+        if (trippedMusic != null)
             hasTrippedMusicStarted = true;
-        }
-        trippedMusic.mute = false;
     }
 
     public void SwitchToSoberWorld()
     {
-        trippedMusic.mute = true;
-        soberMusic.mute = false;
+        PlayOnlyMusic(soberMusic);
+    }
+
+    private void PlayOnlyMusic(AudioSource musicToPlay)
+    {
+        AudioSource[] musicSources = { menuMusic, soberMusic, trippedMusic };
+
+        foreach (AudioSource musicSource in musicSources)
+        {
+            if (musicSource == null || musicSource == musicToPlay)
+                continue;
+
+            musicSource.Stop();
+        }
+
+        if (musicToPlay != null && !musicToPlay.isPlaying)
+            musicToPlay.Play();
+    }
+
+    private void StopAllMusic()
+    {
+        if (menuMusic != null)
+            menuMusic.Stop();
+        if (soberMusic != null)
+            soberMusic.Stop();
+        if (trippedMusic != null)
+            trippedMusic.Stop();
+    }
+
+    public void PlayJump()
+    {
+        if (saltoCorto != null)
+            saltoCorto.Play();
+    }
+
+    public void PlayMushroomPickup()
+    {
+        if (tragar != null)
+            tragar.Play();
+    }
+
+    public void PlayTicketPickup()
+    {
+        if (agarrarTicket != null)
+            agarrarTicket.Play();
+    }
+
+    public void PlayPortal()
+    {
+        if (portal != null)
+            portal.Play();
+    }
+
+    public void PlayNpcInteraction()
+    {
+        AudioSource[] interactionSounds =
+        {
+            interaccion1,
+            interaccion2,
+            interaccion3,
+            interaccion4
+        };
+
+        int startIndex = Random.Range(0, interactionSounds.Length);
+        for (int offset = 0; offset < interactionSounds.Length; offset++)
+        {
+            AudioSource interactionSound =
+                interactionSounds[(startIndex + offset) % interactionSounds.Length];
+
+            if (interactionSound != null)
+            {
+                interactionSound.Play();
+                return;
+            }
+        }
     }
     
 }
