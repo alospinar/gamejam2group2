@@ -16,6 +16,9 @@ public class MushroomPickup : MonoBehaviour
             return;
         }
 
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayMushroomPickup();
+
         worldManager.RestoreMushroomCharges(chargesToRestore);
         Destroy(gameObject);
     }

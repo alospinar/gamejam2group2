@@ -21,9 +21,12 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed = 10f;
     private float climbSpeed = 5f;
     private float _gravityScaleAtStart ;
+    private bool movementLocked;
 
     private InputSystem_Actions _playerInputActions;
     private InputAction _moveAction,_jumpAction;
+
+    public bool MovementLocked => movementLocked;
 
     public void Awake(){
         
@@ -118,6 +121,12 @@ public class PlayerController : MonoBehaviour
     }
     private void GatherInput()
     {
+        if (movementLocked)
+        {
+            moveInput = Vector2.zero;
+            return;
+        }
+
         Vector2 rawInput = _moveAction.ReadValue<Vector2>();
         moveInput = rawInput.sqrMagnitude > 1f ? rawInput.normalized : rawInput;
     }
@@ -132,15 +141,37 @@ public class PlayerController : MonoBehaviour
 
     private void HandleJump()
     {
+        if (movementLocked)
+            return;
+
         if(_jumpAction.WasPressedThisFrame() && CheckGrounded())
         {
             if (_animator != null)
                 _animator.SetTrigger("Jump");
 
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlayJump();
+
             OnJump?.Invoke();
         }
     }
-    
+
+    public void SetMovementLocked(bool locked)
+    {
+        movementLocked = locked;
+        if (locked)
+        {
+            moveInput = Vector2.zero;
+            _rigidBody.linearVelocity = new Vector2(0f, _rigidBody.linearVelocity.y);
+        }
+    }
+
+    public void SetPushingAnimation(bool isPushing)
+    {
+        if (_animator != null)
+            _animator.SetBool("IsPushing", isPushing);
+    }
+
     private void ApllyJumpForce()
     {
         _rigidBody.linearVelocity = new Vector2(_rigidBody.linearVelocity.x, 0f);
