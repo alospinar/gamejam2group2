@@ -1,8 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -41,24 +39,22 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            StopAllMusic();
-        }
-        else if (Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
+
+        Instance = this;
+        transform.SetParent(null);
+        DontDestroyOnLoad(gameObject);
+        StopAllMusic();
     }
 
     void Start()
     {
         InicializeVolume();
-        GameObject gameManagerObject = GameObject.Find("GameManager");
-        if (gameManagerObject != null)
-            gameManager = gameManagerObject.GetComponent<GameManager>();
+        gameManager = GameManager.Instance;
     }
 
     private void InicializeVolume() 
@@ -66,29 +62,66 @@ public class SoundManager : MonoBehaviour
         float savedBGM = PlayerPrefs.GetFloat("BGMVolume", 1f);
         float savedSFX = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
+        ApplyBGMVolume(savedBGM);
+        ApplySFXVolume(savedSFX);
+        BindSliders(bgmSlider, sfxSlider);
+    }
+
+    public void BindSliders(Slider bgm, Slider sfx)
+    {
+        float savedBGM = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float savedSFX = PlayerPrefs.GetFloat("SFXVolume", 1f);
+
+        if (bgmSlider != null && bgmSlider != bgm)
+            bgmSlider.onValueChanged.RemoveListener(SetBGMVolume);
+        if (sfxSlider != null && sfxSlider != sfx)
+            sfxSlider.onValueChanged.RemoveListener(SetSFXVolume);
+
+        bgmSlider = bgm;
+        sfxSlider = sfx;
+
         if (bgmSlider != null)
         {
-            bgmSlider.value = savedBGM;
+            bgmSlider.onValueChanged.RemoveListener(SetBGMVolume);
+            bgmSlider.SetValueWithoutNotify(savedBGM);
             bgmSlider.onValueChanged.AddListener(SetBGMVolume);
         }
 
         if (sfxSlider != null)
         {
-            sfxSlider.value = savedSFX;
+            sfxSlider.onValueChanged.RemoveListener(SetSFXVolume);
+            sfxSlider.SetValueWithoutNotify(savedSFX);
             sfxSlider.onValueChanged.AddListener(SetSFXVolume);
         }
     }
 
     public void SetBGMVolume(float value)
     {
-        mainMixer.SetFloat("BGMVolume", Mathf.Log10(value) * 20);
+        ApplyBGMVolume(value);
         PlayerPrefs.SetFloat("BGMVolume", value);
     }
 
     public void SetSFXVolume(float value)
     {
-        mainMixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
+        ApplySFXVolume(value);
         PlayerPrefs.SetFloat("SFXVolume", value);
+    }
+
+    private void ApplyBGMVolume(float value)
+    {
+        if (mainMixer != null)
+            mainMixer.SetFloat("BGMVolume", Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f);
+    }
+
+    private void ApplySFXVolume(float value)
+    {
+        if (mainMixer != null)
+            mainMixer.SetFloat("SFXVolume", Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f);
+    }
+
+    public void PlayMenuMusic()
+    {
+        PlayOnlyMusic(menuMusic);
     }
 
     public void PlaySoberMusic()
