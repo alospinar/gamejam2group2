@@ -43,9 +43,7 @@ public class PoliceVision : MonoBehaviour
 
     private void DetectPlayersInRange()
     {
-        if (Time.time < nextDetectionTime ||
-            LevelManager.Instance == null ||
-            LevelManager.Instance.CurrentState != GameState.Playing)
+        if (Time.time < nextDetectionTime || !CanDetectPlayer())
             return;
 
         Collider2D[] playersInRange = Physics2D.OverlapCircleAll(
@@ -66,13 +64,17 @@ public class PoliceVision : MonoBehaviour
         TryDetect(other);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        TryDetect(collision.collider);
+    }
+
     private void TryDetect(Collider2D other)
     {
         if (Time.time < nextDetectionTime ||
             (!IsInLayerMask(other.gameObject.layer, playerLayer) &&
              !other.CompareTag("Player")) ||
-            LevelManager.Instance == null ||
-            LevelManager.Instance.CurrentState != GameState.Playing)
+            !CanDetectPlayer())
             return;
 
         nextDetectionTime = Time.time + detectionInterval;
@@ -87,7 +89,19 @@ public class PoliceVision : MonoBehaviour
         if (angle > viewAngle * 0.5f)
             return;
 
-        LevelManager.Instance.TriggerGameOver(GameOverReason.PoliceDetected);
+        if (GameManager.Instance != null)
+            GameManager.Instance.policeColision = true;
+
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.TriggerGameOver(GameOverReason.PoliceDetected);
+    }
+
+    private static bool CanDetectPlayer()
+    {
+        if (LevelManager.Instance != null)
+            return LevelManager.Instance.CurrentState == GameState.Playing;
+
+        return GameManager.Instance != null && GameManager.Instance.isGameActive;
     }
 
     private void ApplyVisualDirection()

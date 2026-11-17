@@ -25,7 +25,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField, Min(0)] private int initialMushrooms;
     [SerializeField, Min(0)] private int requiredTickets = 3;
 
-    [Header("Game Over Scenes")]
+    [Header("Game Over")]
+    [SerializeField] private bool useInLevelGameOverWhenGameManagerExists = true;
     [SerializeField] private string anxietyGameOverScene = "Derrota 1";
     [SerializeField] private string policeGameOverScene = "Derrota 2";
 
@@ -61,6 +62,7 @@ public class LevelManager : MonoBehaviour
         }
 
         Instance = this;
+        transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
         ResetSession();
     }
@@ -154,15 +156,15 @@ public class LevelManager : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         string nextScene;
 
-        if (currentScene == firstLevelScene)
+        if (string.Equals(currentScene, firstLevelScene, StringComparison.OrdinalIgnoreCase))
         {
             nextScene = secondLevelScene;
         }
-        else if (currentScene == secondLevelScene)
+        else if (string.Equals(currentScene, secondLevelScene, StringComparison.OrdinalIgnoreCase))
         {
             nextScene = thirdLevelScene;
         }
-        else if (currentScene == thirdLevelScene)
+        else if (string.Equals(currentScene, thirdLevelScene, StringComparison.OrdinalIgnoreCase))
         {
             if (tickets < requiredTickets)
             {
@@ -203,6 +205,12 @@ public class LevelManager : MonoBehaviour
         transitionInProgress = true;
         SetGameState(GameState.GameOver);
         OnGameOver?.Invoke(reason);
+
+        if (useInLevelGameOverWhenGameManagerExists && GameManager.Instance != null)
+        {
+            transitionInProgress = false;
+            return;
+        }
 
         string sceneName = reason == GameOverReason.AnxietyLimit
             ? anxietyGameOverScene
