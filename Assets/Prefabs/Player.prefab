@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 5850654060183037197}
   - component: {fileID: 2496715593891728233}
   - component: {fileID: 483730889343271082}
+  - component: {fileID: 7000000000000000001}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -372,6 +373,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   interactionIndicator: {fileID: 0}
+--- !u!114 &7000000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884962868139491948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5c6e8d0d5f4c3b9a1e7f6d8b2a4c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DangerAnxiety
+  anxietyPerSecond: 5
+  dangerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &4855297533172854741
 GameObject:
   m_ObjectHideFlags: 0
