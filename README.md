@@ -10,6 +10,9 @@
 
 The game includes anxiety and mushroom-management mechanics, police detection, NPC dialogue, pushable furniture, a pause menu, settings, credits, victory, and two types of game over.
 
+- **Play:** [itch.io - El viaje de Paco](https://wooliesam.itch.io/el-viaje-de-paco)
+- **GDD:** [Game Design Document](https://drive.google.com/file/d/1GtLMmGCBQ7XVUMhkAWjpg1ZomoxjptDr/view?usp=sharing)
+
 ### Controls
 
 | Action | Keyboard / Mouse | Gamepad |
@@ -131,6 +134,9 @@ The configured build scene order is:
 **GameJam2 Group2** es un juego 2D de desplazamiento lateral creado como parte de una **GameJam2**. El jugador recorre tres niveles, recoge boletos y usa hongos para alternar entre un mundo real y un mundo fantástico con diferentes visuales, plataformas, colisionadores y estados físicos.
 
 El juego incluye mecanicas de ansiedad y gestion de hongos, deteccion policial, dialogos con NPC, muebles empujables, pausa, ajustes, creditos, victoria y dos tipos de derrota.
+
+- **Jugar:** [itch.io - El viaje de Paco](https://wooliesam.itch.io/el-viaje-de-paco)
+- **GDD:** [Documento de diseño del juego](https://drive.google.com/file/d/1GtLMmGCBQ7XVUMhkAWjpg1ZomoxjptDr/view?usp=sharing)
 
 ### Controles
 
